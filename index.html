@@ -198,7 +198,7 @@
 
 <nav>
   <div class="container nav-inner">
-    <a class="brand" href="#">
+    <a class="brand" href="/">
       <img src="assets/logo.png" alt="Gladiaty">
       <span>GLADIATY</span>
     </a>
@@ -418,6 +418,13 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
   },{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Scroll suave manteniendo la URL limpia (sin #seccion)
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const el=document.querySelector(a.getAttribute('href'));
+      if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});history.replaceState(null,'',location.pathname);}
+    });
+  });
 </script>
 </body>
 </html>
