@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gladiaty — Alcance, ventas o las dos cosas. Tú eliges.</title>
+<meta name="description" content="Contenido orgánico y embudos de venta para marcas personales y empresas. +200M de visualizaciones y récords de facturación. Casos reales, con nombre y apellidos.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0b;
+    --surface:#131316;
+    --surface2:#1a1a1f;
+    --border:#26262c;
+    --text:#f5f5f5;
+    --muted:#a1a1aa;
+    --accent:#ff5e00;
+    --accent-soft:rgba(255,94,0,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  .accent{color:var(--accent)}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,11,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+  .logo-badge{width:38px;height:38px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center}
+  .logo-badge svg{width:24px;height:24px}
+  .brand-name{font-family:'Space Grotesk';font-weight:700;font-size:1.25rem;letter-spacing:.5px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.92rem;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#0a0a0b;font-weight:600;padding:12px 24px;border-radius:10px;text-decoration:none;font-size:.95rem;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,94,0,.35)}
+  .btn.small{padding:9px 18px;font-size:.88rem}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .btn.ghost:hover{border-color:var(--accent);box-shadow:none;color:var(--accent)}
+
+  /* HERO */
+  .hero{padding:160px 0 80px;position:relative}
+  .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(255,94,0,.14),transparent 65%);pointer-events:none}
+  .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);border:1px solid rgba(255,94,0,.3);padding:6px 14px;border-radius:100px;font-size:.82rem;font-weight:500;margin-bottom:24px}
+  .hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:700;max-width:850px}
+  .hero p.sub{color:var(--muted);font-size:1.15rem;max-width:640px;margin:22px 0 34px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* STATS */
+  .stats{margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+  .stat{background:var(--surface);padding:28px 22px;text-align:center}
+  .stat .num{font-family:'Space Grotesk';font-size:2rem;font-weight:700;color:var(--accent)}
+  .stat .lbl{color:var(--muted);font-size:.85rem;margin-top:4px}
+
+  section{padding:90px 0}
+  .kicker{color:var(--accent);font-weight:600;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+  h2.title{font-size:clamp(1.7rem,3.5vw,2.5rem);margin-bottom:16px}
+  p.lead{color:var(--muted);max-width:600px;margin-bottom:48px}
+
+  /* CASES */
+  .cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .case{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:30px;transition:border-color .2s,transform .2s}
+  .case:hover{border-color:rgba(255,94,0,.5);transform:translateY(-4px)}
+  .case .metric{font-family:'Space Grotesk';font-size:1.9rem;font-weight:700;color:var(--accent);margin-bottom:6px}
+  .case h3{font-size:1.08rem;margin-bottom:10px}
+  .case p{color:var(--muted);font-size:.93rem}
+  .case.featured{grid-column:1/-1;background:linear-gradient(135deg,var(--surface),var(--surface2));display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  .case.featured .metrics-row{display:flex;flex-wrap:wrap;gap:24px;margin-top:18px}
+  .case.featured .m .metric{font-size:1.6rem;margin:0}
+  .case.featured .m .lbl{color:var(--muted);font-size:.82rem}
+
+  /* TESTIMONIAL */
+  .testimonial{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:50px;position:relative;max-width:820px;margin:0 auto}
+  .testimonial::before{content:'“';position:absolute;top:8px;left:28px;font-family:'Space Grotesk';font-size:6rem;color:var(--accent);opacity:.35;line-height:1}
+  .testimonial blockquote{font-size:1.12rem;color:var(--text)}
+  .testimonial blockquote p{margin-bottom:16px}
+  .testimonial .author{display:flex;align-items:center;gap:14px;margin-top:26px}
+  .testimonial .avatar{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#0a0a0b;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:1.1rem}
+  .testimonial .who strong{display:block}
+  .testimonial .who span{color:var(--muted);font-size:.88rem}
+
+  /* SERVICES */
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .service{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:34px 28px}
+  .service .icon{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.3rem}
+  .service h3{font-size:1.15rem;margin-bottom:10px}
+  .service p{color:var(--muted);font-size:.94rem}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .step{padding:30px;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+  .step .n{font-family:'Space Grotesk';font-size:.9rem;font-weight:700;color:var(--accent);border:1px solid rgba(255,94,0,.4);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .step h3{font-size:1.05rem;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:.92rem}
+
+  /* CTA FINAL */
+  .cta-final{text-align:center;background:linear-gradient(180deg,var(--bg),#120b06);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .cta-final h2{font-size:clamp(1.8rem,4vw,2.8rem);max-width:700px;margin:0 auto 18px}
+  .cta-final p{color:var(--muted);max-width:520px;margin:0 auto 34px}
+
+  footer{padding:40px 0;color:var(--muted);font-size:.85rem}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+
+  /* WhatsApp float */
+  .wa-float{position:fixed;bottom:26px;right:26px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45);z-index:99;transition:transform .15s}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:30px;height:30px;fill:#fff}
+
+  /* CAPTURAS */
+  .caps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .cap{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s}
+  .cap:hover{border-color:rgba(255,94,0,.5);transform:translateY(-4px)}
+  .cap img{width:100%;aspect-ratio:9/17;object-fit:cover;object-position:top;display:block}
+  .cap .cap-txt{padding:16px 18px;color:var(--muted);font-size:.88rem}
+  .cap .cap-txt strong{color:var(--accent)}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .gallery .pair{grid-column:span 2}
+  .gallery .pair .imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .gallery figure{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s}
+  .gallery figure:hover{border-color:rgba(255,94,0,.5);transform:translateY(-4px)}
+  .gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+  .gallery figcaption{padding:16px 18px;color:var(--muted);font-size:.88rem}
+  .gallery figcaption strong{color:var(--text)}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  @media(max-width:820px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .case.featured{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+    .gallery .pair{grid-column:1/-1}
+    .caps{grid-template-columns:1fr 1fr}
+    .nav-links a:not(.btn){display:none}
+    .testimonial{padding:36px 26px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#">
+      <span class="logo-badge">
+        <img src="assets/logo.png" alt="Gladiaty" style="height:26px;width:auto;display:block">
+      </span>
+      <span class="brand-name">GLADIATY</span>
+    </a>
+    <div class="nav-links">
+      <a href="#resultados">Resultados</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a class="btn small" href="https://wa.link/7g579i" target="_blank" rel="noopener">Hablemos →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="hero-tag">Hay algo peor que no tener redes sociales: tenerlas hechas un desastre.</span>
+    <h1>Alcance. Ventas.<br><span class="accent">O las dos cosas.</span></h1>
+    <p class="sub">Hay quien viene buscando millones de visualizaciones. Hay quien viene buscando facturar más. Y hay quien quiere las dos cosas. Hemos conseguido las tres: más de <strong style="color:var(--text)">200 millones de views en un año</strong> para un solo cliente, y récord de facturación para un negocio de +12 años en los primeros 30 días. Tú nos dices qué buscas. Nosotros te decimos cómo.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="https://wa.link/7g579i" target="_blank" rel="noopener">Escríbenos (respondemos nosotros, no un bot)</a>
+      <a class="btn ghost" href="#resultados">Antes mira esto</a>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="num">+200M</div><div class="lbl">views en un año. Un solo cliente.</div></div>
+      <div class="stat"><div class="num">+1 año</div><div class="lbl">seguido haciendo +100K views al día</div></div>
+      <div class="stat"><div class="num">90M</div><div class="lbl">views en un solo vídeo. Sí, uno.</div></div>
+      <div class="stat"><div class="num">10/10</div><div class="lbl">plazas vendidas con 400 seguidores</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="resultados">
+  <div class="container">
+    <div class="kicker">¿Quieres pruebas?</div>
+    <h2 class="title">Podríamos decirte que somos muy buenos. Preferimos enseñártelo.</h2>
+    <p class="lead">Nada de logos inventados ni pantallazos recortados. Casos reales, con nombre y apellidos, que puedes comprobar tú mismo.</p>
+
+    <div class="cases">
+      <div class="case featured reveal">
+        <div>
+          <div class="metric">Rafel Mayol</div>
+          <h3>Estaba estancado en 4.000 views por vídeo. La primera semana con nosotros hizo 100.000.</h3>
+          <p>Dos años después seguimos batiendo récords en todas sus plataformas, con un embudo Skool que ha reportado miles de euros en ventas y una comunidad llena de leads que quieren comprar. No que quieren "seguirle". Que quieren comprar.</p>
+        </div>
+        <div>
+          <img src="assets/rafel-premio.jpg" alt="Ricardo entregando a Rafel Mayol el premio de los 10K en Skool" style="width:100%;border-radius:12px;border:1px solid var(--border);margin-bottom:18px">
+          <div class="metrics-row">
+            <div class="m"><div class="metric">200M</div><div class="lbl">views en 2025</div></div>
+            <div class="m"><div class="metric">90M</div><div class="lbl">views en un vídeo</div></div>
+            <div class="m"><div class="metric">3</div><div class="lbl">plataformas con récord: IG, TikTok y YouTube</div></div>
+            <div class="m"><div class="metric">+100K</div><div class="lbl">views/día durante más de un año</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case reveal">
+        <div class="metric">Récord histórico</div>
+        <h3>MariaSquatFit</h3>
+        <p>Una referente del fitness con +3M de views al mes y un negocio de más de 12 años. Récord de facturación de toda su historia. No en el primer año: en los primeros 30 días.</p>
+      </div>
+
+      <div class="case reveal">
+        <div class="metric">+3.000€</div>
+        <h3>Entrenador con 400 seguidores</h3>
+        <p>Sí, cuatrocientos. Más de 3.000€ facturados en menos de 45 días y las 10 plazas del programa vendidas. Los seguidores no pagan. Los clientes sí.</p>
+      </div>
+
+      <div class="case reveal">
+        <div class="metric">+20M</div>
+        <h3>De no pasar de 500K a 20 millones</h3>
+        <p>Mismo cliente, misma cámara, mismo nicho. Distinta estrategia. Más de 20 millones de views en menos de 6 meses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="kicker">Directo de las analíticas</div>
+    <h2 class="title">Los números, sin recortar</h2>
+    <p class="lead">Pantallazos reales de las cuentas con las que trabajamos. Tal cual salen de la app.</p>
+    <div class="caps">
+      <div class="cap reveal">
+        <img src="assets/cap-76m.jpg" alt="Resumen de Instagram: 76 millones de visualizaciones en un mes, +1517%">
+        <div class="cap-txt"><strong>+76 millones</strong> de views en un solo mes. Un +1.517% respecto al mes anterior.</div>
+      </div>
+      <div class="cap reveal">
+        <img src="assets/cap-reel-record.jpg" alt="Insights de reel con 86,7 millones de reproducciones">
+        <div class="cap-txt"><strong>El récord:</strong> un solo reel con casi 87 millones de reproducciones y +3.400 seguidores nuevos.</div>
+      </div>
+      <div class="cap reveal">
+        <img src="assets/cap-tiktok-100m.jpg" alt="Estadísticas de TikTok: 100 millones de visualizaciones en 365 días">
+        <div class="cap-txt"><strong>100 millones</strong> de views en TikTok en 365 días. Con 5,8M de me gusta.</div>
+      </div>
+      <div class="cap reveal">
+        <img src="assets/cap-7m-30dias.jpg" alt="Instagram: 7,5 millones de reproducciones en 30 días, 99,5% de no seguidores">
+        <div class="cap-txt"><strong>7,5 millones</strong> de views en 30 días. El 99,5%, gente que no seguía la cuenta.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="kicker" style="text-align:center">Esto no lo decimos nosotros</div>
+    <video controls preload="metadata" poster="assets/testimonio-poster.jpg" class="reveal" style="width:100%;max-width:820px;display:block;margin:0 auto 32px;border:1px solid var(--border);border-radius:20px;background:#000">
+      <source src="assets/testimonio-rafel.mp4" type="video/mp4">
+      Tu navegador no soporta vídeo HTML5.
+    </video>
+    <div class="testimonial reveal">
+      <blockquote>
+        <p>No solamente sabe de views: entiende perfectamente cómo funciona el tema de conversiones a la hora de conseguir leads (clientes potenciales), o incluso hacer un ejercicio de persuasión para tu audiencia y llevarla dentro del embudo de ventas.</p>
+        <p>Más allá de las métricas, es una persona comprometida, trabajadora y profesional que no para de aprender y aplicar cosas nuevas. Desde el primer día que le vi trabajar supe que lo quería en el equipo. Si quieres resultados de verdad, lo recomiendo sin dudarlo.</p>
+      </blockquote>
+      <div class="author">
+        <div class="avatar">RM</div>
+        <div class="who">
+          <strong>Rafel Mayol</strong>
+          <span>Emprendedor · Fundador de Emprendedores.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="entorno" style="padding-top:0">
+  <div class="container">
+    <div class="kicker">Esto no se puede fingir</div>
+    <h2 class="title">Trabajamos con referentes</h2>
+    <p class="lead">Trabajamos con los mejores. Y seguimos aprendiendo de los mejores. Las dos cosas se notan en los resultados.</p>
+    <div class="gallery">
+      <figure class="reveal">
+        <img src="assets/rafel-premio-2.jpg" alt="Ricardo y Rafel Mayol riéndose durante la entrega del premio de los 10K">
+        <figcaption><strong>Con Rafel Mayol</strong>, celebrando su premio de los 10K en Skool. Los resultados, mejor con buen ambiente.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="assets/maria.jpg" alt="Ricardo con María SquatFit y Hamlet">
+        <figcaption><strong>Con María y Hamlet (SquatFit)</strong>. Récord de facturación de su historia en los primeros 30 días trabajando juntos.</figcaption>
+      </figure>
+      <figure class="reveal pair">
+        <div class="imgs">
+          <img src="assets/evento-skool.jpg" alt="Ricardo en los Skool Games, evento privado">
+          <img src="assets/juampe.jpg" alt="Ricardo con Juampe Navarro en los Skool Games">
+        </div>
+        <figcaption><strong>The Skool Games — Private Event</strong>.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="kicker">Qué hacemos</div>
+    <h2 class="title">Tres cosas. Y las tres bien.</h2>
+    <p class="lead">Podríamos ofrecerte quince servicios con nombres en inglés. Preferimos hacer tres cosas que funcionan. ¿Solo alcance? ¿Solo conversión? ¿Las dos? En función de lo que busques, combinamos.</p>
+    <div class="services">
+      <div class="service reveal" style="background:var(--bg)">
+        <div class="icon">🎥</div>
+        <h3>Contenido orgánico</h3>
+        <p>No hacemos vídeos "bonitos". Hacemos vídeos que la gente ve hasta el final, comparte y recuerda. En Instagram, TikTok y YouTube. Por eso los récords de arriba.</p>
+      </div>
+      <div class="service reveal" style="background:var(--bg)">
+        <div class="icon">🔻</div>
+        <h3>Embudos de venta</h3>
+        <p>De poco sirve que te vean millones si luego nadie te compra. Diseñamos embudos (como el Embudo Skool) que convierten curiosos en clientes. Sin perseguir a nadie.</p>
+      </div>
+      <div class="service reveal" style="background:var(--bg)">
+        <div class="icon">🧠</div>
+        <h3>Consultoría estratégica</h3>
+        <p>Si ya tienes equipo y solo necesitas el mapa, te lo dibujamos. Estrategia, posicionamiento e IA aplicada. Sin palabrería y sin PowerPoints de 80 diapositivas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="container">
+    <div class="kicker">Cómo funciona</div>
+    <h2 class="title">Sin reuniones eternas ni promesas de gurú</h2>
+    <p class="lead">El proceso es simple. Lo difícil ya lo ponemos nosotros.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>Nos escribes</h3><p>Por WhatsApp. Nos cuentas tu caso. Si no podemos ayudarte, te lo decimos a la primera y no te hacemos perder el tiempo. A nosotros tampoco nos sobra.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Te damos el plan</h3><p>Formatos, plataformas y el embudo adecuado para tu marca. Basado en lo que ya ha funcionado en los casos de arriba, no en teorías de curso online.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>Ejecutamos</h3><p>Publicamos, medimos, ajustamos. Hasta batir tus récords de alcance y facturación. Es lo que ha pasado con todos los clientes que has visto aquí.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>¿Views, ventas o las dos cosas? <span class="accent">Cuéntanoslo.</span></h2>
+    <p>Escríbenos con tu caso y lo que buscas. Te contestaremos con honestidad: si podemos ayudarte, te diremos cómo. Y si no podemos, también te lo diremos. Así de simple.</p>
+    <a class="btn" href="https://wa.link/7g579i" target="_blank" rel="noopener">Cuéntanos tu caso →</a>
+    <p style="margin:34px auto 0;font-size:.88rem;opacity:.75;max-width:480px">PD: Si buscas resultados en 7 días no te molestes en contactar y te agradecemos mucho tu tiempo por aquí. Si buscas resultados realistas como los que has visto, esperamos tu mensaje.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Gladiaty · Ricardo — Contenido y embudos que venden. Lo otro, para los demás.</span>
+    <span>gladiaty.com</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.link/7g579i" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 .5C7.5.5.6 7.4.6 15.9c0 2.7.7 5.4 2.1 7.7L.5 31.5l8.1-2.1c2.3 1.2 4.8 1.9 7.4 1.9 8.5 0 15.4-6.9 15.4-15.4S24.5.5 16 .5zm0 28.2c-2.3 0-4.6-.6-6.6-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5c-1.3-2-1.9-4.4-1.9-6.8C3.2 8.8 8.9 3.1 16 3.1s12.8 5.7 12.8 12.8S23.1 28.7 16 28.7zm7-9.6c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.5-.2.3-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.3-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+</a>
+
+<script>
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
