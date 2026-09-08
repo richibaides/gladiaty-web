@@ -124,6 +124,17 @@
   .quote .author strong{font-weight:500}
   .quote .author span{color:var(--ink-soft)}
   .quote-more{margin-top:26px;color:var(--ink-soft);max-width:640px;font-size:.95rem}
+  .yt{position:relative;width:100%;max-width:820px;aspect-ratio:16/9;margin:0 0 48px;border:1px solid var(--hairline);background:#000;cursor:pointer;overflow:hidden}
+  .yt img{width:100%;height:100%;object-fit:cover;display:block}
+  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .yt-play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:var(--accent);box-shadow:0 8px 28px rgba(0,0,0,.4);transition:transform .2s}
+  .yt-play::after{content:'';position:absolute;left:31px;top:24px;border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent}
+  .yt:hover .yt-play{transform:scale(1.08)}
+  .yt-note{position:absolute;left:0;right:0;bottom:0;padding:8px 14px;font-size:.72rem;color:#ddd;background:linear-gradient(transparent,rgba(0,0,0,.55));text-align:right}
+  .testi{padding-bottom:72px;margin-bottom:72px;border-bottom:1px solid var(--hairline)}
+  .testi:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .testi-vertical{display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:center}
+  @media(max-width:900px){.testi-vertical{grid-template-columns:1fr;gap:36px}.testi-vertical video{max-width:280px}}
 
   /* CAPTURAS */
   .caps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--ink);padding-top:44px}
@@ -262,15 +273,15 @@
         <div class="idx">/ 01</div>
       </div>
       <div class="row reveal">
-        <div class="metric">Récord<small>MariaSquatFit</small></div>
+        <div class="metric">Récord<small>María y Hamlet · SquatFit</small></div>
         <div>
-          <h3>Récord de facturación de toda su historia.</h3>
-          <p>Una referente del fitness con +3M de views al mes y un negocio de más de 12 años. No lo consiguió en el primer año trabajando juntos: lo consiguió en los primeros 30 días.</p>
+          <h3>Récord de facturación de toda su historia el primer mes. Casi el doble de ese récord en el cuarto.</h3>
+          <p>Una referente del fitness con +3M de views al mes y un negocio de más de 12 años. El primer récord llegó en los primeros 30 días. Y las visualizaciones, en sus palabras, se han duplicado y hasta triplicado en muchos meses.</p>
         </div>
         <div class="idx">/ 02</div>
       </div>
       <div class="row reveal">
-        <div class="metric">+3.000€<small>Entrenador fitness</small></div>
+        <div class="metric">+3.000€<small>Rubén · Gorilamente</small></div>
         <div>
           <h3>Con 400 seguidores. Sí, cuatrocientos.</h3>
           <p>Más de 3.000€ facturados en menos de 45 días y las 10 plazas del programa vendidas. Los seguidores no pagan. Los clientes sí.</p>
@@ -311,14 +322,45 @@
 <section style="padding-top:0">
   <div class="container">
     <div class="sec-num" style="margin-bottom:40px"><b>02</b> Esto no lo decimos nosotros</div>
-    <video controls preload="metadata" poster="assets/testimonio-poster.jpg" class="reveal" style="width:100%;max-width:820px;display:block;margin:0 0 48px;border:1px solid var(--hairline);background:#000">
-      <source src="assets/testimonio-rafel.mp4" type="video/mp4">
-      Tu navegador no soporta vídeo HTML5.
-    </video>
-    <div class="quote reveal">
-      <blockquote>"No solamente sabe de views: entiende perfectamente cómo funciona el tema de <em>conversiones</em> a la hora de conseguir leads (clientes potenciales), o incluso hacer un ejercicio de persuasión para tu audiencia y llevarla dentro del embudo de ventas."</blockquote>
-      <p class="quote-more">"Más allá de las métricas, es una persona comprometida, trabajadora y profesional que no para de aprender y aplicar cosas nuevas. Desde el primer día que le vi trabajar supe que lo quería en el equipo. Si quieres resultados de verdad, lo recomiendo sin dudarlo."</p>
-      <div class="author"><strong>Rafel Mayol</strong><span>· Emprendedor · Fundador de Emprendedores.com</span></div>
+
+    <!-- RAFEL -->
+    <div class="testi reveal">
+      <video controls preload="metadata" poster="assets/testimonio-poster.jpg" style="width:100%;max-width:820px;display:block;margin:0 0 48px;border:1px solid var(--hairline);background:#000">
+        <source src="assets/testimonio-rafel.mp4" type="video/mp4">
+        Tu navegador no soporta vídeo HTML5.
+      </video>
+      <div class="quote">
+        <blockquote>"No solamente sabe de views: entiende perfectamente cómo funciona el tema de <em>conversiones</em> a la hora de conseguir leads (clientes potenciales), o incluso hacer un ejercicio de persuasión para tu audiencia y llevarla dentro del embudo de ventas."</blockquote>
+        <p class="quote-more">"Más allá de las métricas, es una persona comprometida, trabajadora y profesional que no para de aprender y aplicar cosas nuevas. Desde el primer día que le vi trabajar supe que lo quería en el equipo. Si quieres resultados de verdad, lo recomiendo sin dudarlo."</p>
+        <div class="author"><strong>Rafel Mayol</strong><span>· Emprendedor · Fundador de Emprendedores.com</span></div>
+      </div>
+    </div>
+
+    <!-- MARÍA Y HAMLET -->
+    <div class="testi reveal">
+      <div class="yt" data-id="p9rPtVVRkkk" role="button" tabindex="0" aria-label="Reproducir testimonio de María y Hamlet">
+        <img src="assets/testimonio-maria-poster.jpg" alt="María y Hamlet, SquatFit">
+        <span class="yt-play" aria-hidden="true"></span>
+        <span class="yt-note">Al reproducir se carga el vídeo desde YouTube</span>
+      </div>
+      <div class="quote">
+        <blockquote>"Hemos llegado a tener <em>récord de facturación</em> en varios meses. Y el otro día estuvimos comparando: en muchos meses hemos duplicado, incluso triplicado, el número de visualizaciones de la cuenta."</blockquote>
+        <p class="quote-more">"Teníamos buenas ideas pero todo muy enmarañado, y estábamos demasiado metidos en la operativa. Richie creó un orden brutal en nuestra empresa: ya tenemos flujos definidos de trabajo para la gente nueva y los procesos son mucho más eficientes. El nivel de implicación que le da a tu marca se siente como si fuese su propia marca. Después de cuatro o cinco meses podemos decir que merece 100% la pena."</p>
+        <div class="author"><strong>María y Hamlet</strong><span>· Fundadores de SquatFit</span></div>
+      </div>
+    </div>
+
+    <!-- RUBÉN -->
+    <div class="testi testi-vertical reveal">
+      <video controls preload="metadata" poster="assets/testimonio-ruben-poster.jpg" style="width:100%;max-width:340px;display:block;border:1px solid var(--hairline);background:#000">
+        <source src="assets/testimonio-ruben.mp4" type="video/mp4">
+        Tu navegador no soporta vídeo HTML5.
+      </video>
+      <div class="quote">
+        <blockquote>"Hicimos un lanzamiento y en 45 días facturamos <em>3.000 euros</em> con todo margen de beneficio. Todo orgánico, y tenía 400 seguidores cuando lo hicimos."</blockquote>
+        <p class="quote-more">"Poquísimas views en historias y poco más. Mega contento de trabajar con él."</p>
+        <div class="author"><strong>Rubén</strong><span>· Entrenador · Fundador de Gorilamente</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -425,6 +467,17 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
   },{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // YouTube con carga diferida: no se contacta con Google hasta que el usuario pulsa play
+  document.querySelectorAll('.yt').forEach(box=>{
+    const load=()=>{
+      const id=box.dataset.id, f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.title='Testimonio en vídeo';
+      box.innerHTML=''; box.appendChild(f); box.style.cursor='default';
+    };
+    box.addEventListener('click',load);
+    box.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+  });
   // Scroll suave manteniendo la URL limpia (sin #seccion)
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
