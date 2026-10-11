@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gladiaty — Agencia de contenido orgánico y embudos de venta | Alcance, ventas o las dos</title>
+<title>Gladiaty, Agencia de contenido orgánico y embudos de venta | Alcance, ventas o las dos</title>
 <meta name="description" content="Agencia de contenido orgánico y embudos de venta para marcas personales y empresas. +200M de visualizaciones en un año y récords de facturación. Casos reales, con nombre y apellidos.">
 <link rel="canonical" href="https://www.gladiaty.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gladiaty">
-<meta property="og:title" content="Gladiaty — Convertimos atención en facturación">
+<meta property="og:title" content="Gladiaty, Convertimos atención en facturación">
 <meta property="og:description" content="Contenido orgánico que multiplica tu alcance y embudos que lo transforman en ventas. +200M de views en un año para un solo cliente.">
 <meta property="og:url" content="https://www.gladiaty.com/">
 <meta property="og:image" content="https://www.gladiaty.com/assets/og-image.jpg">
@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gladiaty — Convertimos atención en facturación">
+<meta name="twitter:title" content="Gladiaty, Convertimos atención en facturación">
 <meta name="twitter:description" content="Contenido orgánico que multiplica tu alcance y embudos que lo transforman en ventas.">
 <meta name="twitter:image" content="https://www.gladiaty.com/assets/og-image.jpg">
 <script type="application/ld+json">
@@ -86,7 +86,8 @@
   .btn:hover{background:var(--ink);color:var(--paper)}
   .btn.solid{background:var(--ink);color:var(--paper)}
   .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
-  .hero-cta{text-align:right}
+  .hero-cta{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:0}
+  .hero-cta .btn{white-space:nowrap}
   .hero-cta .note{display:block;margin-top:12px;font-size:.78rem;color:var(--ink-soft);letter-spacing:0;text-transform:none}
 
   /* STATS strip */
@@ -105,7 +106,7 @@
   .sec-head h2{font-size:clamp(1.9rem,4vw,3.1rem);margin-top:10px}
   .sec-head .lead{color:var(--ink-soft);padding-top:14px;max-width:460px}
 
-  /* CASES — ledger style */
+  /* CASES, ledger style */
   .ledger{border-top:1px solid var(--ink)}
   .row{display:grid;grid-template-columns:220px 1fr 120px;gap:40px;padding:38px 0;border-bottom:1px solid var(--hairline);align-items:baseline;transition:padding-left .25s}
   .row:hover{padding-left:14px}
@@ -142,7 +143,7 @@
   .cap .cap-txt{margin-top:12px;font-size:.82rem;color:var(--ink-soft)}
   .cap .cap-txt strong{color:var(--ink);font-weight:500}
 
-  /* GALLERY — editorial */
+  /* GALLERY, editorial */
   .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
   .gallery figure{position:relative}
   .gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:grayscale(100%);transition:filter .45s ease}
@@ -153,7 +154,7 @@
   .gallery .pair{grid-column:span 2}
   .gallery .pair .imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px}
 
-  /* SERVICES — numbered columns */
+  /* SERVICES, numbered columns */
   .services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
   .service{padding:44px 34px 44px 0;border-right:1px solid var(--hairline)}
   .service:last-child{border-right:none}
@@ -162,7 +163,7 @@
   .service h3{font-size:1.4rem;margin-bottom:14px}
   .service p{color:var(--ink-soft);font-size:.94rem}
 
-  /* PROCESS — inline steps */
+  /* PROCESS, inline steps */
   .steps{counter-reset:step}
   .steps .step{display:grid;grid-template-columns:120px 300px 1fr;gap:40px;padding:34px 0;border-bottom:1px solid var(--hairline);align-items:baseline}
   .steps .step::before{counter-increment:step;content:counter(step,decimal-leading-zero);font-family:'Fraunces',serif;font-style:italic;color:var(--accent);font-size:1.4rem}
@@ -194,7 +195,7 @@
 
   @media(max-width:900px){
     .hero-foot{grid-template-columns:1fr;gap:30px}
-    .hero-cta{text-align:left}
+    .hero-cta{text-align:left;align-items:flex-start}
     .stats{grid-template-columns:1fr 1fr}
     .stat{padding:26px 20px 26px 0}
     .sec-head{grid-template-columns:1fr;gap:16px;margin-bottom:44px}
@@ -237,7 +238,8 @@
     <div class="hero-foot">
       <p>Hay quien viene buscando millones de visualizaciones. Hay quien viene buscando facturar más. Y hay quien quiere las dos cosas. Hemos conseguido más de <strong>200 millones de views en un año</strong> para un solo cliente y récord de facturación para un negocio de +12 años en los primeros 30 días. Tú nos dices qué buscas. Nosotros te ayudamos a lograrlo</p>
       <div class="hero-cta">
-        <a class="btn solid" href="https://wa.link/ymju5s" target="_blank" rel="noopener">Escríbenos</a>
+        <a class="btn solid" href="https://go.gladiaty.com/widget/bookings/gladiaty-llamada-diagnostico" target="_blank" rel="noopener">Reservar llamada de diagnóstico</a>
+        <a class="btn" href="https://wa.link/ymju5s" target="_blank" rel="noopener" style="margin-top:10px">Escríbenos por WhatsApp</a>
         <span class="note">Respondemos nosotros. No un bot.</span>
       </div>
     </div>
@@ -388,7 +390,7 @@
           <img src="assets/evento-skool.jpg" alt="Ricardo en los Skool Games, evento privado">
           <img src="assets/juampe.jpg" alt="Ricardo con Juampe Navarro en los Skool Games">
         </div>
-        <figcaption><b>/ 03</b><span><strong>The Skool Games — Private Event</strong>.</span></figcaption>
+        <figcaption><b>/ 03</b><span><strong>The Skool Games · Private Event</strong>.</span></figcaption>
       </figure>
     </div>
   </div>
@@ -445,7 +447,8 @@
     <div class="overline">Último paso</div>
     <h2>¿Views, ventas o las dos cosas? <em>Cuéntanoslo.</em></h2>
     <p>Escríbenos con tu caso y lo que buscas. Te contestaremos con honestidad: si podemos ayudarte, te diremos cómo. Y si no podemos, también te lo diremos. Así de simple.</p>
-    <a class="btn" href="https://wa.link/ymju5s" target="_blank" rel="noopener">Cuéntanos tu caso</a>
+    <a class="btn" href="https://go.gladiaty.com/widget/bookings/gladiaty-llamada-diagnostico" target="_blank" rel="noopener">Reservar llamada de diagnóstico</a>
+    <a class="btn" href="https://wa.link/ymju5s" target="_blank" rel="noopener" style="margin-left:10px">Escríbenos por WhatsApp</a>
     <div class="ps">PD: Si buscas resultados en 7 días no te molestes en contactar y te agradecemos mucho tu tiempo por aquí. Si buscas resultados realistas como los que has visto, esperamos tu mensaje.</div>
   </div>
 </section>
