@@ -3,8 +3,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /brandonarcila/
-Disallow: /propuesta-tech
 
 # Asistentes y buscadores de IA (acceso explicito)
 User-agent: GPTBot
@@ -20,7 +18,5 @@ User-agent: Applebot-Extended
 User-agent: Bingbot
 User-agent: CCBot
 Allow: /
-Disallow: /brandonarcila/
-Disallow: /propuesta-tech
 
 Sitemap: https://www.gladiaty.com/sitemap.xml
