@@ -22,16 +22,52 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Gladiaty",
-  "url": "https://www.gladiaty.com/",
-  "logo": "https://www.gladiaty.com/assets/favicon.png",
-  "image": "https://www.gladiaty.com/assets/og-image.jpg",
-  "description": "Agencia de contenido orgánico y embudos de venta para marcas personales y empresas. Convertimos atención en facturación.",
-  "founder": {"@type": "Person", "name": "Ricardo Brozyna Toribio"},
-  "sameAs": ["https://www.instagram.com/gladiaty_oficial"],
-  "areaServed": "Worldwide",
-  "knowsLanguage": ["es", "en"]
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://www.gladiaty.com/#org",
+      "name": "Gladiaty",
+      "alternateName": "Gladiaty Agency",
+      "url": "https://www.gladiaty.com/",
+      "logo": "https://www.gladiaty.com/assets/favicon.png",
+      "image": "https://www.gladiaty.com/assets/og-image.jpg",
+      "description": "Agencia de contenido orgánico y embudos de venta para marcas personales y negocios que ya facturan. Trabaja con el método ACC (Atención, Confianza, Conversión) en Instagram, TikTok y YouTube.",
+      "founder": {"@id": "https://www.gladiaty.com/#ricardo"},
+      "address": {"@type": "PostalAddress", "addressCountry": "ES"},
+      "areaServed": ["ES", "Worldwide"],
+      "knowsLanguage": ["es", "en"],
+      "knowsAbout": ["Contenido orgánico", "Marca personal", "Reels de Instagram", "TikTok", "YouTube Shorts", "Embudos de venta", "Comunidades en Skool", "Método ACC", "IA aplicada al marketing"],
+      "sameAs": ["https://www.instagram.com/gladiaty_oficial"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Gladiaty",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Contenido orgánico", "description": "Estrategia, guiones, edición y publicación de contenido vertical para Instagram, TikTok y YouTube orientado a alcance."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Embudos de venta", "description": "Diseño de embudos, como el embudo Skool, que convierten la audiencia en clientes."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consultoría estratégica", "description": "Estrategia, posicionamiento e IA aplicada para negocios con equipo propio."}}
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.gladiaty.com/#ricardo",
+      "name": "Ricardo Brozyna Toribio",
+      "alternateName": "Richi Baides",
+      "jobTitle": "Fundador de Gladiaty",
+      "description": "Ingeniero mecánico y fundador de Gladiaty. Especialista en contenido orgánico y embudos de venta para marcas personales.",
+      "worksFor": {"@id": "https://www.gladiaty.com/#org"},
+      "url": "https://www.gladiaty.com/",
+      "sameAs": ["https://www.instagram.com/richibaides_mkt"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.gladiaty.com/#web",
+      "url": "https://www.gladiaty.com/",
+      "name": "Gladiaty",
+      "inLanguage": "es-ES",
+      "publisher": {"@id": "https://www.gladiaty.com/#org"}
+    }
+  ]
 }
 </script>
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -540,7 +576,7 @@
 <footer>
   <div class="container footer-inner">
     <span>© 2026 Gladiaty · Contenido y embudos que venden</span>
-    <span class="footer-legal"><a href="/aviso-legal.html">Aviso legal</a><a href="/privacidad.html">Privacidad</a><a href="/cookies.html">Cookies</a><a href="/terminos.html">Términos</a></span>
+    <span class="footer-legal"><a href="/respuestas">Respuestas</a><a href="/aviso-legal.html">Aviso legal</a><a href="/privacidad.html">Privacidad</a><a href="/cookies.html">Cookies</a><a href="/terminos.html">Términos</a></span>
   </div>
 </footer>
 

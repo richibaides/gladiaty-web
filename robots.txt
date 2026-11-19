@@ -1,4 +1,26 @@
+# Gladiaty · robots.txt
+# Buscadores y asistentes de IA pueden leer y citar el contenido publico.
+
 User-agent: *
 Allow: /
+Disallow: /brandonarcila/
+Disallow: /propuesta-tech
+
+# Asistentes y buscadores de IA (acceso explicito)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: CCBot
+Allow: /
+Disallow: /brandonarcila/
+Disallow: /propuesta-tech
 
 Sitemap: https://www.gladiaty.com/sitemap.xml
